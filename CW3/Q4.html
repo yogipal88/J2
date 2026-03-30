@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        Name:
+        <input type="text" id="name" placeholder="Enter name"><br>
+        Email:
+        <input type="email" name="" id="email" placeholder="Enter email"><br>
+        Password:
+        <input type="password" name="" id="pass" placeholder="Enter password"><br>
+        <button type="submit" id="btn">Submit</button>
+
+        <script>
+            const btn=document.getElementById("btn")
+            btn.addEventListener("click",()=>{
+                const name=document.getElementById("name").value
+                const email=document.getElementById("email").value
+                const password=document.getElementById("pass").value
+
+                //validation name
+                const nameReg=/^[A-Za-z]+$/
+                const emailReg=/[^\s@]+@[^\s@]+\.[^\s@]/
+                const passReg=/[length{4,6}]/
+
+                if(!nameReg.test(name)){
+                    alert("Enter valid username")
+                }
+                if(!emailReg.test(email)){
+                    alert("Enter valid email")
+                }
+                if(!passReg.test(password)){
+                    alert("Enter valid password")
+                }
+                else{
+                   alert("successful")
+                }
+            })
+        </script>
+    </form>
+</body>
+</html>

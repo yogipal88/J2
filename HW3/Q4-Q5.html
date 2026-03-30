@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Product name:
+    <input type="text" id="name" placeholder="Enter name"> <br>
+    Price:
+    <input type="number" id="price" placeholder="Enter number"><br>
+    Quantity:
+    <input type="number" id="quantity" placeholder="Enter number"><br>
+    Customer Name:
+    <input type="text" id="cn" placeholder="Enter customer name"><br>
+    Address:
+    <input type="text" name="" id="add" placeholder="Enter address"><br>
+    <button type="submit" id="b1">Submit</button>
+
+    <script>
+        const b1= document.getElementById("b1")
+        b1.addEventListener("click",()=>{
+           const name=document.getElementById("name").value
+           const price=document.getElementById("price").value
+           const Quantity=document.getElementById("quantity").value
+           const customername=document.getElementById("cn").value
+           const address=document.getElementById("add").value
+
+           //validation name
+           const nameReg=/^[A-Za-z]+$/
+           const priceReg=/^[0-9]\d$/
+           const quantityReg=/^[0-9]\d$/
+           const customernameReg=/^[A-Za-z]+$/
+           const addressReg=/[^A-Za-z\s\d]+$/
+
+           if(!nameReg.test(name)){
+            alert("Enter valid product Name")
+           }
+           if(price<1000){
+            alert("Enter valid number")
+           }
+           if(Quantity<10){
+            alert("Enter valid number")
+           }
+           if(!customernameReg.test(customername)){
+            alert("Enter valid name")
+           }
+           if(!addressReg.test(address)){
+            alert("Enter valid address")
+           }
+           else{
+            alert("successful")
+           }
+
+        })
+    </script>
+</body>
+</html>
