@@ -25,7 +25,7 @@
                 //validation name
                 const nameReg=/^[A-Za-z]+$/
                 const emailReg=/[^\s@]+@[^\s@]+\.[^\s@]/
-                const passReg=/[length{4,6}]/
+                const passReg=/(?=.*[A-Z])(?=.*[a-z])(?=.*[\d]){8,16}/
 
                 if(!nameReg.test(name)){
                     alert("Enter valid username")

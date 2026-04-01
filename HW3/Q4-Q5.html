@@ -6,45 +6,52 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="">
     Product name:
-    <input type="text" id="name" placeholder="Enter name"> <br>
+    <input type="text" id="pname" placeholder="Enter Product name"> <br>
     Price:
     <input type="number" id="price" placeholder="Enter number"><br>
     Quantity:
-    <input type="number" id="quantity" placeholder="Enter number"><br>
+    <input type="number" id="qty" placeholder="Enter number"><br>
     Customer Name:
-    <input type="text" id="cn" placeholder="Enter customer name"><br>
+    <input type="text" id="cname" placeholder="Enter customer name"><br>
     Address:
-    <input type="text" name="" id="add" placeholder="Enter address"><br>
+    <input type="text" name="" id="address" placeholder="Enter address"><br>
+    product:
+    <input type="text" id="pmatch" placeholder="Enter product"><br>
     <button type="submit" id="b1">Submit</button>
+    </form>
 
     <script>
         const b1= document.getElementById("b1")
         b1.addEventListener("click",()=>{
-           const name=document.getElementById("name").value
+           const pname=document.getElementById("pname").value
            const price=document.getElementById("price").value
-           const Quantity=document.getElementById("quantity").value
-           const customername=document.getElementById("cn").value
-           const address=document.getElementById("add").value
+           const Quantity=document.getElementById("qty").value
+           const cname=document.getElementById("cname").value
+           const address=document.getElementById("address").value
+           const pmatch=document.getElementById("pmatch").value
+           const pmatchArray=["Mango","Apple","Banana"]
 
            //validation name
-           const nameReg=/^[A-Za-z]+$/
-           const priceReg=/^[0-9]\d$/
-           const quantityReg=/^[0-9]\d$/
+           const nameReg=/^[A-Za-z\d]+$/
            const customernameReg=/^[A-Za-z]+$/
-           const addressReg=/[^A-Za-z\s\d]+$/
+           const addressReg=/^[A-Za-z\s]+$/
 
-           if(!nameReg.test(name)){
+           if(!nameReg.test(pname)){
             alert("Enter valid product Name")
            }
-           if(price<1000){
+           if(!pmatchArray.includes(pmatch)){
+            alert("this product is not available")
+           }
+           if(price<100){
             alert("Enter valid number")
            }
-           if(Quantity<10){
+           if(Quantity<0){
             alert("Enter valid number")
            }
-           if(!customernameReg.test(customername)){
-            alert("Enter valid name")
+           if(!customernameReg.test(cname)){
+            alert("Enter valid customer name")
            }
            if(!addressReg.test(address)){
             alert("Enter valid address")
@@ -52,8 +59,13 @@
            else{
             alert("successful")
            }
-
+              
         })
+        localStorage.setItem("pname",pname)
+        localStorage.setItem("customername",cname)
+        localStorage.setItem("quantity",Quantity)
+        localStorage.setItem("address",address)
+        localStorage.setItem("pmatch",pmatch)
     </script>
 </body>
 </html>

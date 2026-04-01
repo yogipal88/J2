@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Product:
+    <input type="number" name="" id="p1">
+    <button type="submit" id="btn">addToCart</button>
+
+    <script>    
+        const btn=document.getElementById("btn")
+        btn.addEventListener("click",()=>{
+            alert("product added to cart")
+            const p1=document.getElementById("p1").value
+        })
+    </script>
+</body>
+</html>

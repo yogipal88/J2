@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Cart: <span id="count">0</span></p>
+    <button onclick="resetCart()">Reset Cart</button>
+    <button onclick="addCart()">Add Cart</button>
+    <button onclick="removeCart()">Remove Cart</button>
+
+    <script>
+        let count=0
+        function addCart(){
+            document.getElementById("count").textContent=count++
+        }
+        function removeCart(){
+            if(count<0){
+                alert("negative number")
+            }else{
+                document.getElementById("count").textContent=count--
+            }
+        }
+        function resetCart(){
+            count=0
+            document.getElementById("count").textContent=count
+        }
+    </script>
+</body>
+</html>
