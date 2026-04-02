@@ -77,6 +77,45 @@ function calculateTotalPrice(...prices) {
 }
 calculateTotalPrice(10,34,56,32,65,76);
 
+//Q6,Q8
+function validage(age){
+    try {
+        if (age<18) {
+            throw new error("Invalid age");
+        } else {
+            console.log("age is valid");
+            
+        }
+    } catch (error) {
+        console.log(error.name+":"+error.message);
+        
+    }
+
+    finally{
+        console.log("code end..");
+        
+    }
+}
+validage(19)
+
+//Q7
+function meth(){
+    console.log(i);
+    
+}
+function meth1(){
+    meth()
+}
+function meth2(){
+    try {
+        meth1();
+    } catch (error) {
+        console.log(error.name+":"+error.message);
+        
+    }
+}
+meth2()
+
 //Q9,Q10
 class validage extends Error{
     constructor(message){
