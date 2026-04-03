@@ -20,6 +20,18 @@ const multiplybyTwo=function (num){
 }
 console.log(multiplybyTwo(6));
 
+//q4
+const Student={
+    name:"Tom",
+    age:22,
+    city:"Mumbai",
+
+    studentDetail() {
+        console.log("Student name: ",this.name,"live in",this.city);
+    }
+}
+Student.studentDetail()
+
 //q5
 const arr=[3,4,14,6,7]
 const q=arr.map((num1)=>{
@@ -55,5 +67,18 @@ const filterSal=Employees.filter((Employees)=>{
 })
 console.log(filterSal);
 
-
+//q8
+const Order=[
+    {orderPrice:1000,Product:"Laptop"},
+    {orderPrice:2000,Product:"Mouse"}
+]
+function OrderDetails(orederList){
+    let total=0
+    for (let i = 0; i < orederList.length; i++) {
+        total += orederList[i].orderPrice;
+    }
+    return total
+}
+const totalOrder = OrderDetails(Order)
+console.log("Total Sale: ",totalOrder);
 

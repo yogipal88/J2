@@ -1,28 +1,20 @@
-interface IPaymentProcessor {
-    processPayment(amount: number): void;
+interface Student{
+    studentResult():void
 }
-
-abstract class PaymentGateway {
-    abstract validateCredentials(): boolean;
-    
-    logTransaction(amount: number) {
-        console.log(`Transaction of $${amount} logged.`);
+abstract class studentMark {
+    name:string
+    constructor(name:string) {
+        this.name=name
+    }
+    sport(){
+        console.log(this.name,"is participate in Sport");
     }
 }
-
-class StripeProvider extends PaymentGateway implements IPaymentProcessor {
-    validateCredentials(): boolean {
-        console.log("Stripe credentials validated.");
-        return true;
-    }
-
-    processPayment(amount: number): void {
-        if (this.validateCredentials()) {
-            console.log(`Processing $${amount} via Stripe...`);
-            this.logTransaction(amount);
-        }
+class StudentDetail extends studentMark implements Student{
+    studentResult(): void {
+        console.log("Sport: ",this.name,"is participate in Running");
     }
 }
-
-const payment = new StripeProvider();
-payment.processPayment(250);
+const sd=new StudentDetail("Tom")
+sd.sport()
+sd.studentResult()
